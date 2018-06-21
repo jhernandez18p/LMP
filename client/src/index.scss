@@ -69,3 +69,21 @@ body {
 #header{
   padding-top: 15px;
 }
+
+nav{
+  border-top: 1px solid rgb(255, 0, 0);
+  border-bottom: 1px solid rgb(255, 0, 0);
+}
+.nav ul{
+  list-style: none;
+}
+
+.navbar-menu.is-active {
+  display: block;
+  height: 100vh;
+  position: absolute;
+  top: -81px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
