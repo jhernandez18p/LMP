@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import './styles.css'; 
 import BaseBackground from '../../assets/images/carros-07.jpg';
 import ImgForm from '../../assets/images/carros-11.jpg';
 
