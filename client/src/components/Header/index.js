@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 
 // Assets
 import Logo from '../../logo-sm.png';
-import './styles.css';
 
 
 // Componentes
