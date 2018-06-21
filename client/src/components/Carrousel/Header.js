@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './header-styles.css'; 
 
 import Audi from '../../assets/images/brands/audi.jpg';
 import BMW from '../../assets/images/brands/bmw.jpg';
