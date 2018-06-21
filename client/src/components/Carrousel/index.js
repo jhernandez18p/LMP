@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './header-styles.css'; 
+
 
 import Carro from '../../assets/images/carros-12.jpg';
 
