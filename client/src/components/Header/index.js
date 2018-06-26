@@ -40,8 +40,8 @@ class Header extends Component {
       <div id="header" ref="test">
         <div className="container">
           <div className="columns">
-            <div className="column is-one-third">
-              <img src={ Logo } alt="Luxury Motors Panamá"></img>
+            <div className="column is-one-third is-hidden-touch">
+              <img src={ Logo } alt="Luxury Motors Panamá" id="isHeaderLogo"></img>
             </div>
             <div className="column is-two-thirds">
               <HeaderCarrousel/>

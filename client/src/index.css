@@ -6437,7 +6437,8 @@ body {
   background-position: center;
   margin: 0;
   padding: 0;
-  overflow-x: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   font-family: 'Titillium Web', sans-serif; }
 
 .is-inventory {
@@ -6481,6 +6482,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0; }
+
+#isHeaderLogo {
+  height: 150px; }
 
 #isBrandedLogo {
   height: 15px; }
