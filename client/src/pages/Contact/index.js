@@ -11,7 +11,7 @@ class Contact extends Component {
           <div className="columns">
             <div className="column">
               <div className="">
-                <Link to="/contacto/f-a-q">
+                <Link to="/front/contacto/f-a-q">
                   <figure className="image is-5by4">
                     <img src={ BaseBackground } alt="Contactenos"></img>
                   </figure>
@@ -20,7 +20,7 @@ class Contact extends Component {
             </div>
             <div className="column">
               <figure className="image is-5by4">
-                <Link to="/contacto/agendar-visita">
+                <Link to="/front/contacto/agendar-visita">
                   <img src={ BaseBackground } alt="Formulario de contacto"></img>
                 </Link>
               </figure>

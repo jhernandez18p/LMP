@@ -1,27 +1,31 @@
 // 1. Import the initial variables
+@import 'bulma/bulma';
 @import "bulma/sass/utilities/initial-variables";
 @import "bulma/sass/utilities/functions";
+
 // 2. Setup your Custom Colors
 $purple: hsl(275,87%,45%);
+$red: rgb(156, 10, 20);
 $purple-invert: findColorInvert($purple);
+$red-invert: findColorInvert($red);
+
 // 3. Add new color variables to the color map.
 @import "bulma/sass/utilities/derived-variables.sass";
 $addColors: (
   "purple":($purple, $purple-invert),
+  "red":($red, $red-invert),
 );
 $colors: map-merge($colors, $addColors);
+  
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
 
-$red: rgb(156, 10, 20);
-
-@import 'bulma/bulma';
-@import "bulma-carousel/dist/css/bulma-carousel";
-
-*{font-family: 'Titillium Web', sans-serif;}
+html{overflow: hidden;}
 body {
   min-height: 100vh;
+  height: 100vh;
   background-color:#000;
   background-image:url('./bg.jpg');
-  background-repeat:no-repeat;
   background-repeat:no-repeat;
   -webkit-background-size:cover;
   -moz-background-size:cover;
@@ -30,9 +34,9 @@ body {
   background-position:center;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  overflow-x: auto;
+  font-family: 'Titillium Web', sans-serif;;
 }
-
 .is-inventory{
   border-radius: 5px;
   padding: 5px;
@@ -48,17 +52,7 @@ body {
   border-color: $red;
   border-radius: 5px;
 }
-#is-img-centered{}
-#is-searcher{
-  padding: 5px;
-  margin-top: 25px;
-}
-@media screen and (max-width: 425px){
-  .is-size-7 {
-    font-size: 0.7135rem !important;
-  }
-}
-
+#is-searcher{padding: 5px;margin-top: 25px;}
 .copyright{
   width: 100%;
   border-top: 1px solid #fff;
@@ -70,14 +64,7 @@ body {
   padding-top: 15px;
 }
 
-nav{
-  border-top: 1px solid rgb(255, 0, 0);
-  border-bottom: 1px solid rgb(255, 0, 0);
-}
-.nav ul{
-  list-style: none;
-}
-
+.is-colored-nav{border-top: 1px solid rgb(255, 0, 0);border-bottom: 1px solid rgb(255, 0, 0);}
 .navbar-menu.is-active {
   display: block;
   height: 100vh;
@@ -87,3 +74,7 @@ nav{
   right: 0;
   bottom: 0;
 }
+#isBrandedLogo{height: 15px;}
+.slick-initialized .slick-slide {padding: 15px;}
+
+@media screen and (max-width: 425px){.is-size-7 {font-size: 0.7135rem !important;}}

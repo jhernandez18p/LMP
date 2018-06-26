@@ -2,25 +2,20 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
 // Assets
+import LM from '../../assets/images/lm.png';
 
 class Nav extends Component {
 
     toggeable(){
-        // e.preventdefault();
-        // console.log((this.refs.isBurger));
-        // if(window.getComputedStyle(this.refs.isBurger).getPropertyValue('display') === 'none'){
-        //     console.log('true');
-        // }else{
-        //     console.log('false');
-        // }
+
     }
     render() {
         return (
-            <nav className={ this.props.fixedMenu ? "navbar is-black" : "navbar is-black is-fixed-top" }>
+            <nav className={ this.props.fixedMenu ? "navbar is-black is-colored-nav" : "navbar is-black is-colored-nav is-fixed-top" }>
                 <div className="container">
                     <div className="navbar-brand">
                         <Link to="/front/inicio" className="navbar-item">
-                            Luxury Motors Panamá
+                            <img src={ LM } alt="Luxury Motors Panama" id="isBrandedLogo"></img>
                         </Link>
                         <span className={ this.props.showMenu ? "navbar-burger" : "navbar-burger is-active" }
                         onClick={this.props.toggleMenu} ref="isBurger" data-target="navMenu">

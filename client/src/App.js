@@ -7,7 +7,6 @@ import { Route, Switch } from "react-router-dom";
 // Assets
 import './index.scss';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
-import '../node_modules/bulma-carousel/dist/js/bulma-carousel';
 
 // Components 
 import Mantenimiento from './components/Mantenimiento';

@@ -11,6 +11,7 @@ import FAQ from './Contact/details/FAQ';
 import Form2 from './Contact/details/Form2';
 import Home from './Home';
 import Inventory from './Inventory';
+import InventoryDetail from './Inventory/details';
 
 
 // Components
@@ -32,6 +33,7 @@ class Base extends Component {
             <Route exact path="/front/inicio" component={ Home } />
             <Route exact path="/front/quienes-somos" component={ About } />
             <Route exact path="/front/inventario" component={ Inventory } />
+            <Route exact path="/front/inventario/:slug" component={ InventoryDetail } />
             <Route exact path="/front/contacto" component={ Contact } />
             <Route exact path="/front/contacto/f-a-q" component={ FAQ } />
             <Route exact path="/front/contacto/#agendar-visita" component={ Form2 } />

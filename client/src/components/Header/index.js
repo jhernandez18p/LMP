@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 
 // Assets
-import Logo from '../../logo-sm.png';
+import Logo from '../../assets/images/logo.png';
 
 
 // Componentes
@@ -43,7 +43,7 @@ class Header extends Component {
             <div className="column is-one-third">
               <img src={ Logo } alt="Luxury Motors Panamá"></img>
             </div>
-            <div className="column">
+            <div className="column is-two-thirds">
               <HeaderCarrousel/>
             </div>
             <p>{ this.props.Brands }</p>
