@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import BaseBackground from '../../../assets/images/carros-05.jpg';
+import BaseBackground from '../../../assets/images/cars/carros-05.jpg';
 
 
 class Inventory extends Component {

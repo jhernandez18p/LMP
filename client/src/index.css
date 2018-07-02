@@ -6428,7 +6428,7 @@ body {
   min-height: 100vh;
   height: 100vh;
   background-color: #000;
-  background-image: url("./bg.jpg");
+  background-image: url("./assets/images/background-app.jpg");
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -6457,7 +6457,7 @@ body {
   border-radius: 5px; }
 
 #is-searcher {
-  padding: 5px;
+  padding: 5px 10px;
   margin-top: 25px; }
 
 .copyright {
@@ -6491,6 +6491,43 @@ body {
 
 .slick-initialized .slick-slide {
   padding: 15px; }
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1; }
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in; }
+
+.background-red {
+  background-color: #9c0a14; }
+
+#is-search-btn {
+  padding-left: 15%;
+  padding-right: 15%;
+  margin: 15px 0; }
+
+#is-search-btn button {
+  width: 180px; }
+
+.car-detail-carousel {
+  width: 500px;
+  border-radius: 5px; }
+
+.car-detail-box {
+  width: 500px;
+  border-radius: 5px;
+  padding: 15px;
+  background: #9c0a14;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #9c0a14, #000);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #9c0a14, #000);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+
+#price {
+  margin-top: -35px; }
 
 @media screen and (max-width: 425px) {
   .is-size-7 {

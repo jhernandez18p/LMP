@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Helmet from 'react-helmet';
 
 import BaseBackground from '../../assets/images/about.jpg';
 import Carrousel from '../../components/Carrousel';
@@ -7,6 +8,13 @@ class About extends Component {
   render() {
     return (
       <div className="container">
+        <Helmet
+          title="Luxury Motors Panamá - ¿Quienes somos?"
+          meta={[
+            { name: 'description', content: 'Con mas de 20 años en el mercado de autos de lujos, somos pioneros en la ciudad de Panamá y contamos con amplia experiencia en el area.' },
+            { name: 'keywords', content: 'Lujo, autos, carros en panama, compra venta, Panamá' },
+          ]}
+        />
         <section className="hero">
           <div className="hero-body">
             <div className="container has-text-centered">

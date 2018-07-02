@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import BaseBackground from '../../assets/images/carros-07.jpg';
-import ImgForm from '../../assets/images/carros-11.jpg';
+import BaseBackground from '../../assets/images/cars/carros-07.jpg';
+import ImgForm from '../../assets/images/cars/carros-11.jpg';
 
 class Footer extends Component {
 
@@ -30,16 +30,41 @@ class Footer extends Component {
           <section className="section">
             <div className="columns">
               <div className="column">
+                <div className="">
+                  <h3 className="is-size-4 has-text-white">
+                    Enlaces de interes
+                  </h3>
+                </div>
                 <hr></hr>
                 <hr></hr>
                 <hr></hr>
               </div>
               <div className="column">
+                <div className="">
+                  <h3 className="is-size-4 has-text-white">
+                    Nuevo en inventario
+                  </h3>
+                </div>
                 <hr></hr>
                 <hr></hr>
                 <hr></hr>
               </div>
               <div className="column">
+                <div className="">
+                  <h3 className="is-size-4 has-text-white">
+                    Encuentranos
+                  </h3>
+                </div>
+                <hr></hr>
+                <hr></hr>
+                <hr></hr>
+              </div>
+              <div className="column">
+                <div className="">
+                  <h3 className="is-size-4 has-text-white">
+                    Contacto
+                  </h3>
+                </div>
                 <hr></hr>
                 <hr></hr>
                 <hr></hr>
@@ -51,6 +76,23 @@ class Footer extends Component {
           <nav className="navbar is-black">
             <div className="container is-centered">
               <div className="navbar-brand">
+                <p className="navbar-item is-size-7">
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                    <span className="icon has-text-white">
+                      <i className="fab fa-facebook-square"></i>
+                    </span>
+                  </a>
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                    <span className="icon has-text-white">
+                      <i className="fab fa-instagram"></i>
+                    </span>
+                  </a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                    <span className="icon has-text-white">
+                      <i className="fab fa-twitter-square"></i>
+                    </span>
+                  </a>
+                </p>
                 <p className="navbar-item is-size-7">
                   All Rights Reserved {year} | Website Designed & Developed by &nbsp;
                   <a href="https://dev2tech.xyz"> Dev2tech</a>.

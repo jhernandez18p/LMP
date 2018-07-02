@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from "react-router-dom";
 
 // Assets
 import Logo from '../../assets/images/logo.png';
@@ -10,30 +10,7 @@ import HeaderCarrousel from '../Carrousel/Header';
 import Nav from '../Nav/index';
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
-      showMenu: true,
-      toggled: false,
-      fixedMenu: true
-    };
-    this.toggleMenu = this.toggleMenu.bind(this);
-  }
 
-  toggleMenu = function () {
-    if (this.state.toggled){
-      this.setState({ 
-        showMenu: this.state.showMenu,
-        toggled: !this.state.toggled
-      });
-    }else{
-      this.setState({ 
-        showMenu: !this.state.showMenu,
-        toggled: this.state.toggled
-      });
-      console.log('Toggled = True');
-    }
-  }
 
   render() {
     return (
@@ -41,7 +18,9 @@ class Header extends Component {
         <div className="container">
           <div className="columns">
             <div className="column is-one-third is-hidden-touch">
-              <img src={ Logo } alt="Luxury Motors Panamá" id="isHeaderLogo"></img>
+              <Link to="/front/home">
+                <img src={ Logo } alt="Luxury Motors Panamá" id="isHeaderLogo"></img>
+              </Link>
             </div>
             <div className="column is-two-thirds">
               <HeaderCarrousel/>
@@ -49,10 +28,7 @@ class Header extends Component {
             <p>{ this.props.Brands }</p>
           </div>
         </div>
-        <Nav 
-          toggleMenu={this.toggleMenu} 
-          showMenu={this.state.showMenu} 
-          fixedMenu={this.state.fixedMenu}/>
+        <Nav/>
       </div>
     );
   }

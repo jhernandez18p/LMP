@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import BaseBackground from '../../../assets/images/carros-04.jpg';
+import BaseBackground from '../../../assets/images/cars/carros-04.jpg';
 
 class Banner extends Component {
     render() {

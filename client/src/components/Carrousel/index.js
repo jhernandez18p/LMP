@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-import Carro from '../../assets/images/carros-12.jpg';
+import Carro from '../../assets/images/cars/carros-12.jpg';
 
 // Apps
 import Slider from "react-slick";

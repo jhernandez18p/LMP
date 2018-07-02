@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 // Assets
 import Audi from '../../assets/images/brands/audi.jpg';
@@ -38,32 +39,46 @@ class HeaderCarrousel extends Component {
             <div className="BrandsCarousel">
                 <Slider {...settings}>
                     <div>
-                        <img src={Audi} alt="Audi"></img>
+                        <Link to="/front/inventario?brand=Audi">
+                            <img src={ Audi } alt="Audi"></img>
+                        </Link>
                     </div>
                     <div>
-                        <img src={BMW} alt="BMW"></img>
+                        <Link to="/front/inventario?brand=BMW">
+                            <img src={ BMW } alt="BMW"></img>
+                        </Link>
                     </div>
                     <div>
-                        <img src={Ferrari} alt="Ferrari"></img>
+                        <Link to="/front/inventario?brand=Ferrari">
+                            <img src={ Ferrari } alt="Ferrari"></img>
+                        </Link>
                     </div>
                     <div>
-                        <img src={Lamborghini} alt="Lamborghini"></img>
+                        <Link to="/front/inventario?brand=Lamborghini">
+                            <img src={ Lamborghini } alt="Lamborghini"></img>
+                        </Link>
                     </div>
                     <div>
-                        <img src={Lexus} alt="Lexus"></img>
+                        <Link to="/front/inventario?brand=Lexus">
+                            <img src={ Lexus } alt="Lexus"></img>
+                        </Link>
                     </div>
                     <div>
-                        <img src={Maserati} alt="Maserati"></img>
+                        <Link to="/front/inventario?brand=Maserati">
+                            <img src={ Maserati } alt="Maserati"></img>
+                        </Link>
                     </div>
                     <div>
-                        <img src={MercedesBenz} alt="Mercedes-Benz"></img>
+                        <Link to="/front/inventario?brand=Mercedes-Benz">
+                            <img src={ MercedesBenz } alt="Mercedes-Benz"></img>
+                        </Link>
                     </div>
                     <div>
-                        <img src={Porsche} alt="Porsche"></img>
+                        <Link to="/front/inventario?brand=Porsche">
+                            <img src={ Porsche } alt="Porsche"></img>
+                        </Link>
                     </div>
                 </Slider>
-
-                
             </div>
         );
     }

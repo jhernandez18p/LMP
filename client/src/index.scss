@@ -2,30 +2,24 @@
 @import 'bulma/bulma';
 @import "bulma/sass/utilities/initial-variables";
 @import "bulma/sass/utilities/functions";
-
-// 2. Setup your Custom Colors
 $purple: hsl(275,87%,45%);
 $red: rgb(156, 10, 20);
 $purple-invert: findColorInvert($purple);
 $red-invert: findColorInvert($red);
-
-// 3. Add new color variables to the color map.
 @import "bulma/sass/utilities/derived-variables.sass";
 $addColors: (
   "purple":($purple, $purple-invert),
   "red":($red, $red-invert),
 );
 $colors: map-merge($colors, $addColors);
-  
 @import "~slick-carousel/slick/slick.css"; 
 @import "~slick-carousel/slick/slick-theme.css";
-
 html{overflow: hidden;}
 body {
   min-height: 100vh;
   height: 100vh;
   background-color:#000;
-  background-image:url('./bg.jpg');
+  background-image:url('./assets/images/background-app.jpg');
   background-repeat:no-repeat;
   -webkit-background-size:cover;
   -moz-background-size:cover;
@@ -36,35 +30,15 @@ body {
   padding: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  font-family: 'Titillium Web', sans-serif;;
+  font-family: 'Titillium Web', sans-serif;
 }
-.is-inventory{
-  border-radius: 5px;
-  padding: 5px;
-}
-.is-centered{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#is-inventory-load-more{
-  width:45%;
-  background-color: $red;
-  border-color: $red;
-  border-radius: 5px;
-}
-#is-searcher{padding: 5px;margin-top: 25px;}
-.copyright{
-  width: 100%;
-  border-top: 1px solid #fff;
-}
-.Branded{
-  min-height: 80px;
-}
-#header{
-  padding-top: 15px;
-}
-
+.is-inventory{border-radius: 5px;padding: 5px;}
+.is-centered{display: flex;align-items: center;justify-content: center;}
+#is-inventory-load-more{width:45%;background-color: $red;border-color: $red;border-radius: 5px;}
+#is-searcher{padding: 5px 10px;margin-top: 25px;}
+.copyright{width: 100%;border-top: 1px solid #fff;}
+.Branded{min-height: 80px;}
+#header{padding-top: 15px;}
 .is-colored-nav{border-top: 1px solid rgb(255, 0, 0);border-bottom: 1px solid rgb(255, 0, 0);}
 .navbar-menu.is-active {
   display: block;
@@ -78,5 +52,21 @@ body {
 #isHeaderLogo{height: 150px;}
 #isBrandedLogo{height: 15px;}
 .slick-initialized .slick-slide {padding: 15px;}
-
+.fade-enter {opacity: 0;z-index: 1;}
+.fade-enter.fade-enter-active {opacity: 1;transition: opacity 250ms ease-in;}
+.background-red{background-color: $red}
+#is-search-btn{padding-left:15%;padding-right: 15%; margin: 15px 0 }
+#is-search-btn button{ width: 180px;}
+.car-detail-carousel{width: 500px; border-radius: 5px;}
+.car-detail-box{
+  width: 500px; 
+  border-radius: 5px; 
+  padding: 15px;
+  background:rgb(156, 10, 20); /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,rgb(156, 10, 20), #000); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,rgb(156, 10, 20), #000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+#price{
+  margin-top: -35px
+}
 @media screen and (max-width: 425px){.is-size-7 {font-size: 0.7135rem !important;}}

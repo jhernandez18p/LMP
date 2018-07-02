@@ -1,28 +1,24 @@
-// 
 import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom";
-// import createHistory from "history/createBrowserHistory";
 
+// import { TransitionGroup, CSSTransition } from "react-transition-group";
+// import createHistory from "history/createBrowserHistory";
 
 // Assets
 import './index.scss';
 import '../node_modules/font-awesome/css/font-awesome.min.css';
-
-// Components 
 import Mantenimiento from './components/Mantenimiento';
-
 
 // Pages
 import Base from './pages/Base';
 
-
 class App extends Component {
   render() {
     return (
-        <Switch>
-            <Route path="/front" component={ Base } />
-            <Route exact path="" component={ Mantenimiento } />
-        </Switch>
+      <Switch>
+          <Route path="/front" component={ Base } />
+          <Route exact path="" component={ Mantenimiento } />
+      </Switch>
     );
   }
 }
