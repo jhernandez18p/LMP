@@ -12,9 +12,9 @@ class Nav extends Component {
             fixedMenu: true,
             showMenu: true,
             toggled: false,
-            width: window.innerWidth
         };
         this.toggleMenu = this.toggleMenu.bind(this);
+        this.handleWindowScroll = this.handleWindowScroll.bind(this);
     }
 
     toggleMenu = function () {
@@ -33,38 +33,20 @@ class Nav extends Component {
         }
     }
 
-    handleClick() {
-        const { width } = this.state;
-        const isMobile = width <= 500;
-        if ( isMobile ){
-            this.setState(prevState => ({
-                isToggleOn: !prevState.isToggleOn
-            }));
-        }else{
-            this.setState(prevState => ({
-                isToggleOn: !prevState.isToggleOn
-            }));
-        }
-    }
-
-    componentWillMount() {
-        window.addEventListener('resize', this.handleWindowSizeChange);
-        window.addEventListener('scroll', this.handleWindowScroll, false);
+    componentDidMount() {
+        document.addEventListener('DOMContentLoaded', this.handleWindowScroll);
     }
     
-    // make sure to remove the listener
-    // when the component is not mounted anymore
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.handleWindowSizeChange);
-        window.removeEventListener('scroll', this.handleWindowScroll, false);
-    }
-
-    handleWindowSizeChange = () => {
-        this.setState({ width: window.innerWidth });
-    };
+    componentWillUnmount() {}
     
-    handleWindowScroll(event) {
-        console.log('the scroll things', event)
+    handleWindowScroll(){
+        let element = document.getElementsByClassName('site');
+        console.log(element);
+        // element.addEventListener('scroll', function (){
+            // console.log('scrolled');
+            
+        // });
+                
     };
 
     render() {
@@ -75,7 +57,7 @@ class Nav extends Component {
                         <Link to="/front/inicio" className="navbar-item">
                             <img src={ LM } alt="Luxury Motors Panama" id="isBrandedLogo"></img>
                         </Link>
-                        <span className={ this.state.showMenu ? "navbar-burger" : "navbar-burger is-active" }
+                        <span className={ this.state.showMenu ? "navbar-burger" : "navbar-burger active is-active" }
                         onClick={this.toggleMenu} ref="isBurger" data-target="navMenu">
                             <span></span>
                             <span></span>

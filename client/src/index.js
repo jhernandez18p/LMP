@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { CookiesProvider } from 'react-cookie';
 
 // Assets
 import './index.css';
@@ -30,9 +31,11 @@ history.listen((location, action) => {
 
 ReactDOM.render((
     <Router>
-        <Provider store={ store }>
-            <App />
-        </Provider>
+        <CookiesProvider>
+            <Provider store={ store }>
+                <App />
+            </Provider>
+        </CookiesProvider>
     </Router>
 ), document.getElementById('wrapper'));
 registerServiceWorker();

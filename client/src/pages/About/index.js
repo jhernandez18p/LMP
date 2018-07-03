@@ -27,14 +27,38 @@ class About extends Component {
             <div className="column">
               <div className="">
                 <figure className="image is-5by4">
-                  <img src={ BaseBackground } alt="Contactenos"></img>
+                  <img src={BaseBackground} alt="Contactenos"></img>
                 </figure>
               </div>
             </div>
             <div className="column">
-              <figure className="image is-5by4">
-                <img src={ BaseBackground } alt="Formulario de contacto"></img>
-              </figure>
+              <div className="car-detail-box has-background-white-ter has-text-white">
+                <div>
+                  <div className="has-text-centered">
+                    <p className="is-size-4 has-text-weight-bold">Luxury Motors Panamá</p>
+                  </div>
+                  <p>
+                  </p>
+                </div>
+                <div className="columns">
+                  <div className="column">
+                    <h3 className="is-size-5">Nuestra historia</h3>
+                    <p className="has-text-grey-light">Con mas de 20 años en el mercado de autos de lujos, somos pioneros en la ciudad de Panamá y contamos con amplia experiencia en el area.</p>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

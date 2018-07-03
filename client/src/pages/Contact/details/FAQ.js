@@ -3,10 +3,29 @@ import React, { Component } from 'react';
 class FAQ extends Component {
     render() {
         return(
-            <div>
-                <p>
-                    Frecuent asked quiestions
-                </p>
+            <div className="container">
+                <section className="section">
+                    <div className="columns has-background-black">
+                        <div className="column">
+                            <hr></hr>
+                            <hr></hr>
+                            <hr></hr>
+                            <hr></hr>
+                            <hr></hr>
+                            <hr></hr>
+                            <hr></hr>
+                            <hr></hr>
+                            <hr></hr>
+                            <hr></hr>
+                            <hr></hr>
+                            <hr></hr>
+                            <hr></hr>
+                            <hr></hr>
+                            <hr></hr>
+                            <hr></hr>
+                        </div>
+                    </div>
+                </section>
             </div>
         );
     }

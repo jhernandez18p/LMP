@@ -9,7 +9,7 @@ class InventoryDetail extends Component {
                 <section className="section">
                     <div className="columns">
                         <div className="column">
-                            <div className="car-detail-carousel has-background-white-ter">
+                            <div className="car-detail-carousel has-background-white-ter is-half">
                                 <NavCarousel/>
                             </div>
                         </div>
@@ -17,10 +17,10 @@ class InventoryDetail extends Component {
                             <div className="car-detail-box has-background-white-ter has-text-white">
                                 <div>
                                     <div className="has-text-left">
-                                        <p className="is-size-4">Lexus LX570 - 2016</p>
+                                        <p className="is-size-4 has-text-weight-bold">Lexus LX570 - 2016</p>
                                     </div>
                                     <div className="has-text-right" id="price">
-                                        <p className="is-size-4">$95.000</p>
+                                        <p className="is-size-4 has-text-weight-bold">$95,000.00</p>
                                     </div>
                                     <p>
                                     </p>

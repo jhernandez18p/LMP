@@ -13,6 +13,7 @@ import Mantenimiento from './components/Mantenimiento';
 import Base from './pages/Base';
 
 class App extends Component {
+
   render() {
     return (
       <Switch>
