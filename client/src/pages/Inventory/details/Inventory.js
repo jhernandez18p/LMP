@@ -5,225 +5,37 @@ import { Link } from 'react-router-dom';
 import BaseBackground from '../../../assets/images/cars/carros-05.jpg';
 
 class InventoryFull extends Component {
+
     render() {
+        const cars = this.props.cars;
+        const size = 3;
+        const listItems = cars.slice(0,size).map(
+            (car) => {
+                return (
+                    <div className="column" key={car.id.toString()}>
+                        <Link to={car.model ?`/inventario/${car.model.replace(/\s+/g, '-').toLowerCase()}`:"/inventario/"}>
+                            <div className="img-container is-radius is-inventory">
+                                <figure className="image is-5by3">
+                                <img src={ car.photos[0].position === 0 ?`${car.photos[0].low}` : BaseBackground } alt={ car.brand }></img>
+                                </figure>
+                                <div className="img-text-overlay">
+                                    <div className="text">
+                                        <h3 className="is-size-4">{car.brand} {car.model}</h3>
+                                        <p className="">{car.description}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                )
+            }
+          );
+        
         return (
             <div className="" id="is-searcher">
                 <section className="">
                     <div className="columns">
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="is-size-6">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="columns">
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="is-size-6">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="columns">
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="is-size-6">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="columns">
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="is-size-6">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="column">
-                            <Link to="/front/inventario/lexus-lx570">
-                                <div className="has-background-light is-radius is-inventory">
-                                    <figure className="image is-5by3">
-                                        <img src={ BaseBackground } alt="Ferrari"></img>
-                                    </figure>
-                                    <div className="">
-                                        <h3 className="is-size-4">Lexus LX570</h3>
-                                        <p className="">Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...</p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </div>
+                        {listItems}
                     </div>
                 </section>
             </div>

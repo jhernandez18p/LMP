@@ -7,22 +7,7 @@ class Form2 extends Component {
                 <section className="section">
                     <div className="columns has-background-black">
                         <div className="column">
-                            <hr></hr>
-                            <hr></hr>
-                            <hr></hr>
-                            <hr></hr>
-                            <hr></hr>
-                            <hr></hr>
-                            <hr></hr>
-                            <hr></hr>
-                            <hr></hr>
-                            <hr></hr>
-                            <hr></hr>
-                            <hr></hr>
-                            <hr></hr>
-                            <hr></hr>
-                            <hr></hr>
-                            <hr></hr>
+                           
                         </div>
                     </div>
                 </section>

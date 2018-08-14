@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import Helmet from 'react-helmet';
 
 // Pages
@@ -13,6 +13,7 @@ import ServiceTermns from './Contact/details/ServiceTermns';
 import Home from './Home';
 import Inventory from './Inventory';
 import InventoryDetail from './Inventory/details';
+// import Error404 from './Error/404';
 
 // Components
 import SiteAllCookie from '../components/Cookies';
@@ -35,9 +36,29 @@ import favicon32x32 from '../assets/images/logo/favicon-32x32.png';
 import favicon96x96 from '../assets/images/logo/favicon-96x96.png';
 
 
+// Redux
+// import PropTypes from 'prop-types';
+// import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+// Actions
+// User Actions
+import { createSelector } from 'reselect'
+import { 
+  // addUser,
+  apiRequest,
+  // authUser,
+  // deleteUser,
+  // invalidateUser,
+  // requestUser,
+  // showError,
+  updateUser,
+} from '../redux/actions/userActions';
+
 class Base extends Component {
 
   render() {
+    const cars = this.props.cars;
     return (
       <div className="site has-navbar-fixed-top">
         <Helmet
@@ -69,18 +90,18 @@ class Base extends Component {
           }
         />
         <SiteAllCookie/>
-        <Header/>
+        <Header brands={ this.props.brands }/>
         <Switch>
-            <Route exact path="/front/inicio" component={ Home } />
-            <Route exact path="/front/quienes-somos" component={ About } />
-            <Route exact path="/front/inventario" component={ Inventory } />
-            <Route exact path="/front/inventario/:slug" component={ InventoryDetail } />
-            <Route exact path="/front/contacto" component={ Contact } />
-            <Route exact path="/front/contacto/#agendar-visita" component={ Form2 } />
-            <Route exact path="/front/contacto/cookies" component={ Cookie } />
-            <Route exact path="/front/contacto/f-a-q" component={ FAQ } />
-            <Route exact path="/front/contacto/privacidad" component={ PrivacyTermns } />
-            <Route exact path="/front/contacto/terminos-de-servicio" component={ ServiceTermns } />
+            <Route exact path="/quienes-somos" component={ About } />
+            <Route exact path="/inventario/:slug" component={ InventoryDetail } cars={ cars }/>
+            <Route exact path="/inventario" component={ Inventory } />
+            <Route exact path="/contacto/terminos-de-servicio" component={ ServiceTermns } />
+            <Route exact path="/contacto/privacidad" component={ PrivacyTermns } />
+            <Route exact path="/contacto/f-a-q" component={ FAQ } />
+            <Route exact path="/contacto/cookies" component={ Cookie } />
+            <Route exact path="/contacto/#agendar-visita" component={ Form2 } />
+            <Route exact path="/contacto" component={ Contact } />
+            <Route exact path="/" component={ Home } />
         </Switch>
         <Footer/>
       </div>
@@ -88,4 +109,43 @@ class Base extends Component {
   }
 }
 
-export default Base;
+
+const siteSelector = createSelector(
+  state => state.site,
+  site => site
+);
+
+const brandsSelector = createSelector(
+  state => state.brands,
+  brands => brands
+);
+
+const carsSelector = createSelector(
+  state => state.cars,
+  cars => cars
+);
+
+const userSelector = createSelector(
+  state => state.user,
+  user => user
+);
+
+const mapStateToProps = createSelector(
+  brandsSelector,
+  carsSelector,
+  userSelector,
+  siteSelector,
+  ( brands, cars, user, site ) => ({
+    brands,
+    cars,
+    site,
+    user
+  })
+);
+
+const mapActionsToProps = {
+    onUpdateUser: updateUser,
+    onApiRequest: apiRequest
+};
+
+export default withRouter(connect( mapStateToProps, mapActionsToProps )(Base));

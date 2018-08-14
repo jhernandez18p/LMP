@@ -24,7 +24,7 @@ class SiteAllCookie extends Component {
         const expires = new Date()
         // const expires = moment().add(5, 'days').format('ddd, D MMM YYYY HH:mm:SS UTCz'); // 'Wed, 31 Oct 2012 08:50:17 GMT';
         // expires.setDate(Date.now() + 1000 * 60 * 60 * 24 * 14)
-        console.log(expires);
+        // console.log(expires);
         
         cookies.set(
             'visited', 
@@ -36,11 +36,11 @@ class SiteAllCookie extends Component {
             }
         );
         this.setState({ 'visited':true });
-        console.log(cookies.get('visited'))
+        // console.log(cookies.get('visited'))
     };
     
     componentDidMount(){
-        console.log(moment().calendar());
+        // console.log(moment().calendar());
         this.setState({ 'now':moment().calendar() });
     }
     render() {
@@ -53,8 +53,8 @@ class SiteAllCookie extends Component {
                                 <p className="has-text-white has-text-centered">
                                     Este sitio utiliza <strong>cookies</strong> para ofrecer nuestros servicios, mostrarle anuncios relevantes 
                                     y listados de vehiculos. <strong>Al usar nuestro sitio</strong>, usted reconoce que ha leído y comprende nuestra 
-                                    <strong><Link to="/front/contacto/cookies"> Política de cookies</Link></strong>, <strong><Link to="/front/contacto/privacidad"> Política de privacidad</Link></strong> y nuestros <strong><Link to="/front/contacto/terminos-de-servicio"> Términos de servicio</Link></strong>. 
-                                    El uso de los productos y servicios de <strong><em><Link to="/front/inicio">Luxury Motors Panamá</Link></em></strong>, está sujeto a estas <strong>políticas y condiciones</strong>.
+                                    <strong><Link to="/contacto/cookies"> Política de cookies</Link></strong>, <strong><Link to="/contacto/privacidad"> Política de privacidad</Link></strong> y nuestros <strong><Link to="/contacto/terminos-de-servicio"> Términos de servicio</Link></strong>. 
+                                    El uso de los productos y servicios de <strong><em><Link to="/">Luxury Motors Panamá</Link></em></strong>, está sujeto a estas <strong>políticas y condiciones</strong>.
                                 </p>
                             </div>
                             <div className="column">

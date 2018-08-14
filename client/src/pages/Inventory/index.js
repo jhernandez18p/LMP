@@ -1,5 +1,25 @@
 import React, { Component } from "react";
 import Helmet from 'react-helmet';
+import { withRouter } from "react-router-dom";
+
+// Redux
+// import PropTypes from 'prop-types';
+// import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+// Actions
+// User Actions
+import { createSelector } from 'reselect'
+import { 
+  // addUser,
+  apiRequest,
+  // authUser,
+  // deleteUser,
+  // invalidateUser,
+  // requestUser,
+  // showError,
+  updateUser,
+} from '../../redux/actions/userActions';
 
 import Paginator from '../../components/Paginator';
 import Searcher from './details/Searcher';
@@ -7,6 +27,8 @@ import InventoryFull from './details/Inventory';
  
 class Inventory extends Component {
   render() {
+    const brands = this.props.brands;
+    const cars = this.props.cars;
     return (
       <div className="container" id="inventory">
         <Helmet
@@ -19,12 +41,12 @@ class Inventory extends Component {
         <div className="columns">
           <div className="column">
             <section >
-              <Searcher/>
+              <Searcher brands={ brands } cars={ cars }/>
             </section>
           </div>
           <div className="column is-three-quarters">
             <section >
-              <InventoryFull/>
+              <InventoryFull cars={ cars }/>
             </section>
           </div>
         </div>
@@ -38,4 +60,29 @@ class Inventory extends Component {
   }
 }
 
-export default Inventory;
+
+const brandsSelector = createSelector(
+  state => state.brands,
+  brands => brands
+);
+
+const carsSelector = createSelector(
+  state => state.cars,
+  cars => cars
+);
+
+const mapStateToProps = createSelector(
+  brandsSelector,
+  carsSelector,
+  ( brands, cars ) => ({
+    brands,
+    cars
+  })
+);
+
+const mapActionsToProps = {
+    onUpdateUser: updateUser,
+    onApiRequest: apiRequest
+};
+
+export default withRouter(connect( mapStateToProps, mapActionsToProps )(Inventory));

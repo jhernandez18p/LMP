@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { NavLink   } from "react-router-dom";
 
 // Assets
-import LM from '../../assets/images/lm.png';
+// import LM from '../../assets/images/lm.png';
 
 class Nav extends Component {
 
@@ -29,7 +29,7 @@ class Nav extends Component {
                 showMenu: !this.state.showMenu,
                 toggled: this.state.toggled
             });
-            console.log('Toggled = True');
+            // console.log('Toggled = True');
         }
     }
 
@@ -40,13 +40,8 @@ class Nav extends Component {
     componentWillUnmount() {}
     
     handleWindowScroll(){
-        let element = document.getElementsByClassName('site');
-        console.log(element);
-        // element.addEventListener('scroll', function (){
-            // console.log('scrolled');
-            
-        // });
-                
+        // let element = document.getElementsByClassName('site');
+        // console.log(element);
     };
 
     render() {
@@ -54,9 +49,12 @@ class Nav extends Component {
             <nav className={ this.state.fixedMenu ? "navbar is-black is-colored-nav" : "navbar is-black is-colored-nav is-fixed-top" }>
                 <div className="container">
                     <div className="navbar-brand">
-                        <Link to="/front/inicio" className="navbar-item">
+                        {/* <NavLink activeStyle={{
+    fontWeight: 'bold',
+    color: 'red'
+   }}  to="/" className="navbar-item">
                             <img src={ LM } alt="Luxury Motors Panama" id="isBrandedLogo"></img>
-                        </Link>
+                        </NavLink > */}
                         <span className={ this.state.showMenu ? "navbar-burger" : "navbar-burger active is-active" }
                         onClick={this.toggleMenu} ref="isBurger" data-target="navMenu">
                             <span></span>
@@ -66,18 +64,18 @@ class Nav extends Component {
                     </div>
                     <div id="navMenu" className={ this.state.showMenu ? "navbar-menu" : "navbar-menu is-active" }>
                         <div className="navbar-end">
-                            <Link to="/front/inicio" className="navbar-item" data-target="navMenu" >
+                            <NavLink activeClassName="is-navbar-active-home" exact to="/" className="navbar-item" data-target="navMenu" >
                                 Inicio
-                            </Link>
-                            <Link to="/front/quienes-somos" className="navbar-item" data-target="navMenu" >
+                            </NavLink >
+                            <NavLink activeClassName="is-navbar-active-home" to="/quienes-somos" className="navbar-item" data-target="navMenu" >
                                 ¿Quienes somos?
-                            </Link>
-                            <Link to="/front/inventario" className="navbar-item" data-target="navMenu" >
+                            </NavLink >
+                            <NavLink activeClassName="is-navbar-active-home" to="/inventario" className="navbar-item" data-target="navMenu" >
                                 Inventario
-                            </Link>
-                            <Link to="/front/contacto" className="navbar-item" data-target="navMenu" >
+                            </NavLink >
+                            <NavLink activeClassName="is-navbar-active-home" to="/contacto" className="navbar-item" data-target="navMenu" >
                                 Contacto
-                            </Link>
+                            </NavLink >
                         </div>
                     </div>
                 </div>

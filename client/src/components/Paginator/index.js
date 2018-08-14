@@ -4,7 +4,7 @@ class Paginator extends Component {
     render() {
         return (
             <div className="" id="">
-                <div className="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
+                {/* <div className="pagination is-centered is-rounded" role="navigation" aria-label="pagination">
                     <ul className="pagination-list">
                         <li>
                             <a className="pagination-link has-background-light" aria-label="Goto page 1">1</a>
@@ -28,7 +28,7 @@ class Paginator extends Component {
                             <a className="pagination-link has-background-light" aria-label="Goto page 86">86</a>
                         </li>
                     </ul>
-                </div>
+                </div> */}
             </div>
         );
     }

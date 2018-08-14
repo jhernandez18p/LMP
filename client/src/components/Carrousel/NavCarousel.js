@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import Carro2 from '../../assets/images/cars/carros-12.jpg';
-import Carro3 from '../../assets/images/cars/carros-11.jpg';
-import Carro4 from '../../assets/images/cars/carros-10.jpg';
-import Carro1 from '../../assets/images/cars/carros-09.jpg';
+// import Carro2 from '../../assets/images/cars/carros-12.jpg';
+// import Carro3 from '../../assets/images/cars/carros-11.jpg';
+// import Carro4 from '../../assets/images/cars/carros-10.jpg';
+// import Carro1 from '../../assets/images/cars/carros-09.jpg';
 
 // Apps
 import Slider from "react-slick";
@@ -34,12 +34,26 @@ class NavCarousel extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            listItems: null,
             nav1: null,
             nav2: null
         };
     }
     componentDidMount() {
+        const imgs = this.props.imgs;
+        // console.log(imgs);
+        const size = 5;
+        const listItems = imgs.slice(0, size).map(
+            (img) => {
+                return (
+                    <div key={img.position.toString()}>
+                        <img src={img.low} alt={img.alt}></img>
+                    </div>
+                )
+            }
+        );
         this.setState({
+            listItems: listItems,
             nav1: this.slider1,
             nav2: this.slider2
         });
@@ -52,18 +66,17 @@ class NavCarousel extends Component {
                     asNavFor={this.state.nav2}
                     ref={slider => (this.slider1 = slider)}
                 >
-                    <div>
+                    {this.state.listItems}
+                    {/* <div>
                         <img src={ Carro2 } alt=""></img>
                     </div>
-                    <div>
-                        <img src={ Carro3 } alt=""></img>
-                    </div>
+                    
                     <div>
                         <img src={ Carro4 } alt=""></img>
                     </div>
                     <div>
                         <img src={ Carro1 } alt=""></img>
-                    </div>
+                    </div> */}
                 </Slider>
                 <Slider {...settings}
                     asNavFor={this.state.nav1}
@@ -72,7 +85,8 @@ class NavCarousel extends Component {
                     swipeToSlide={true}
                     focusOnSelect={true}
                 >
-                    <div>
+                    {this.state.listItems}
+                    {/* <div>
                         <img src={ Carro2 } alt="Carro2"></img>
                     </div>
                     <div>
@@ -83,7 +97,7 @@ class NavCarousel extends Component {
                     </div>
                     <div>
                         <img src={ Carro1 } alt="Carro1"></img>
-                    </div>
+                    </div> */}
                 </Slider>
             </div>
         );

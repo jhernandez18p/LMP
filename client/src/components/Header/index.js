@@ -1,8 +1,9 @@
+// 
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // Assets
-import Logo from '../../assets/images/logo/ms-icon-310x310.png';
+import Logo from '../../assets/images/logo.png';
 
 // Componentes
 import HeaderCarrousel from '../Carrousel/Header';
@@ -10,19 +11,20 @@ import Nav from '../Nav/index';
 
 class Header extends Component {
   render() {
+    const brands = this.props.brands;
+    
     return (
       <div id="header" ref="test">
         <div className="container">
           <div className="columns">
             <div className="column is-one-third is-hidden-touch">
-              <Link to="/front/inicio">
+              <NavLink exact to="/">
                 <img src={ Logo } alt="Luxury Motors Panamá" id="isHeaderLogo"></img>
-              </Link>
+              </NavLink>
             </div>
             <div className="column is-two-thirds">
-              <HeaderCarrousel/>
+              <HeaderCarrousel brands={ brands }/>
             </div>
-            <p>{ this.props.Brands }</p>
           </div>
         </div>
         <Nav/>

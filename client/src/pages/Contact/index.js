@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Helmet from 'react-helmet';
 
-import BaseBackground from '../../assets/images/background.jpg';
+import FAQ from '../../assets/images/cars/faq.jpg';
+import BOOK from '../../assets/images/cars/book.jpg';
+
  
 class Contact extends Component {
   render() {
@@ -19,17 +21,17 @@ class Contact extends Component {
           <div className="columns">
             <div className="column">
               <div className="">
-                <Link to="/front/contacto/f-a-q">
+                <Link to="/contacto/f-a-q">
                   <figure className="image is-5by4">
-                    <img src={ BaseBackground } alt="Contactenos"></img>
+                    <img src={ FAQ } alt="Contactenos"></img>
                   </figure>
                 </Link>
               </div>
             </div>
             <div className="column">
               <figure className="image is-5by4">
-                <Link to="/front/contacto/agendar-visita">
-                  <img src={ BaseBackground } alt="Formulario de contacto"></img>
+                <Link to="/contacto/agendar-visita">
+                  <img src={ BOOK } alt="Formulario de contacto"></img>
                 </Link>
               </figure>
             </div>
