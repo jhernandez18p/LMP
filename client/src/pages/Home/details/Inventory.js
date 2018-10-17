@@ -6,9 +6,14 @@ import BaseBackground from '../../../assets/images/cars/carros-05.jpg';
 
 class Inventory extends Component {
     render() {
-        const cars = this.props.cars;
-        const size = 3;
-        const listItems = cars.slice(0,size).map(
+        let cars = this.props.cars;
+        let cars_type = this.props.cars_type;
+        console.log(cars_type);
+        
+        let carType = <div></div>;
+        let size = 3;
+
+        let listItems = cars.slice(0,size).map(
             (car) => {
                 return (
                     <div className="column" key={car.id.toString()}>
@@ -49,6 +54,11 @@ class Inventory extends Component {
                         <h2 className="title is-uppercase">
                             <Link to="/inventario" className="button has-text-white" id="is-inventory-load-more">cargar mas</Link>
                         </h2>
+                    </div>
+                </section>
+                <section>
+                    <div className="columns">
+                        {carType}
                     </div>
                 </section>
             </div>

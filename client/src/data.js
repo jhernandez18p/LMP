@@ -58,6 +58,8 @@ const data = {
             },
         ],
         'newsletter': false,
+        'debug': true,
+        'production': false,
         'history': 'Con mas de 20 años en el mercado de autos de lujos, somos pioneros en la ciudad de Panamá y contamos con amplia experiencia en el area.'
     },
     cars: [
@@ -243,85 +245,7 @@ const data = {
                     'position':6
                 },
             ]
-        },
-        // {
-        //     'id':4,
-        //     'brand':'Lexus',
-        //     'model':'LX570',
-        //     'milage':'12.000 Kms.',
-        //     'year':'',
-        //     'direction':'Hidráulica',
-        //     'sub_type':'Todoterreno',
-        //     'traction':'4 x 4',
-        //     'transmission':'Automática',
-        //     'color':'Gris',
-        //     'fuel':'Gasolina',
-        //     'engine':'Motor (cilindraje)',
-        //     'price':'',
-        //     'slug':'',
-        //     'description':'Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...',
-        //     'photos': [
-        //         {
-        //             'low':'',
-        //             'hight':'',
-        //             'thumb':'',
-        //             'alt':'',
-        //             'position':0
-        //         }
-        //     ]
-        // },
-        // {
-        //     'id':5,
-        //     'brand':'Lexus',
-        //     'model':'LX570',
-        //     'milage':'12.000 Kms.',
-        //     'year':'',
-        //     'direction':'Hidráulica',
-        //     'sub_type':'Todoterreno',
-        //     'traction':'4 x 4',
-        //     'transmission':'Automática',
-        //     'color':'Gris',
-        //     'fuel':'Gasolina',
-        //     'engine':'Motor (cilindraje)',
-        //     'price':'',
-        //     'slug':'',
-        //     'description':'Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...',
-        //     'photos': [
-        //         {
-        //             'low':'',
-        //             'hight':'',
-        //             'thumb':'',
-        //             'alt':'',
-        //             'position':0
-        //         }
-        //     ]
-        // },
-        // {
-        //     'id':6,
-        //     'brand':'Lexus',
-        //     'model':'LX570',
-        //     'milage':'12.000 Kms.',
-        //     'year':'',
-        //     'direction':'Hidráulica',
-        //     'sub_type':'Todoterreno',
-        //     'traction':'4 x 4',
-        //     'transmission':'Automática',
-        //     'color':'Gris',
-        //     'fuel':'Gasolina',
-        //     'engine':'Motor (cilindraje)',
-        //     'price':'',
-        //     'slug':'',
-        //     'description':'Hermosa camioneta Lexus modelo LX570, con apenas 12.000 Kms, todoterreno, automatica, 4x4 ...',
-        //     'photos': [
-        //         {
-        //             'low':'',
-        //             'hight':'',
-        //             'thumb':'',
-        //             'alt':'',
-        //             'position':0
-        //         }
-        //     ]
-        // },
+        }
     ],
     brands: [
         {
@@ -401,6 +325,15 @@ const data = {
             'alt':'',
             'img': AstonMartin
         }
+    ],
+    cars_type: [
+        {
+            'name': 'Audi',
+            'id': 1,
+            'slug':'Audi',
+            'alt':'',
+            'img': Audi
+        },
     ],
     user: 'Guest'
 }

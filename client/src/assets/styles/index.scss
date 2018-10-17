@@ -21,6 +21,8 @@ body {
   height: 100vh;
   background-color:#000;
   background-image:url('../images/background-app-01.jpg');
+  background-image:url('../images/background-app-03.jpg');
+  background-image:url('../images/background-app-02.jpg') !important;
   background-repeat:no-repeat;
   -webkit-background-size:cover;
   -moz-background-size:cover;
@@ -33,9 +35,7 @@ body {
   overflow-y: auto;
   font-family: 'Titillium Web', sans-serif;
 }
-.has-background-lmpblack{
-  background-color: $back-footer !important;
-}
+.has-background-lmpblack{ background-color: $back-footer !important; }
 .is-inventory{border-radius: 5px;padding: 5px;}
 .is-centered{display: flex;align-items: center;justify-content: center;}
 #is-inventory-load-more{width:45%;background-color: $red;border-color: $red;border-radius: 5px;}
@@ -234,4 +234,19 @@ body {
   text-align: center;
 }
 
+.intranet{
+  height: 100%;
+}
+.intranet-wrapper{
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.intranet-wrapper #intranet-body{
+  margin-top: 25px;
+}
+#intranet-body{
+  flex: 1 0 auto;
+}
 @media screen and (max-width: 425px){.is-size-7 {font-size: 0.7135rem !important;}}

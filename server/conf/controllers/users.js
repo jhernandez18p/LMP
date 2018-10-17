@@ -115,7 +115,7 @@ module.exports = {
                     service: 'gmail',
                     host: 'smtp.gmail.com',
                     auth: {
-                        user: 'luxurymotorsweb@gmail.com, luxurymotorspanama@gmail.com ',
+                        user: 'luxurymotorsweb@gmail.com ',
                         pass: 'LuxuryMotorsPanama01'
                     }
                 }
@@ -124,7 +124,7 @@ module.exports = {
 
         const mailOptions = {
             from: 'luxurymotorsweb@gmail.com',
-            to: 'luxurymotorsweb@gmail.com',
+            to: 'luxurymotorsweb@gmail.com, luxurymotorspanama@gmail.com',
             subject: 'Mensaje de contacto',
             text: message()
         };

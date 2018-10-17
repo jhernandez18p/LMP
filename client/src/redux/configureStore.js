@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 // Reducers
 import userReducer from './reducers/userReducer';
 import carReducer from './reducers/carReducer';
+import carsTypeReducer from './reducers/carsTypeReducer';
 import brandReducer from './reducers/brandReducer';
 import siteReducer from './reducers/siteReducer';
 
@@ -16,10 +17,11 @@ const allReducers = combineReducers({
     site: siteReducer,
     user: userReducer,
     cars: carReducer,
+    cars_type: carsTypeReducer,
     brands: brandReducer,
 });
 
-const initialData = data
+const initialData = data;
 
 const composeEnhancers =  compose(
     applyMiddleware(

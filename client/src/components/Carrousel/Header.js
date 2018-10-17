@@ -49,7 +49,7 @@ class HeaderCarrousel extends Component {
                 )
             }
         );
-        console.log(listItems);
+        // console.log(listItems);
         this.setState({
             listItems: listItems,
         });

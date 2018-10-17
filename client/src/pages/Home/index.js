@@ -22,7 +22,8 @@ import Inventory from './details/Inventory';
 
 class Home extends Component {
   render() {
-    const cars = this.props.cars;
+    let cars = this.props.cars;
+    let cars_type = this.props.cars_type;
     return (
       <div className="container">
         <Helmet
@@ -33,7 +34,7 @@ class Home extends Component {
           ]}
         />
         <Carrousel/>
-        <Inventory cars={cars}/>
+        <Inventory cars={cars} cars_type={cars_type}/>
         <Banner/>
       </div>
     );
@@ -45,6 +46,11 @@ const carsSelector = createSelector(
   cars => cars
 );
 
+const carsTypeSelector = createSelector(
+  state => state.cars_type,
+  cars_type => cars_type
+);
+
 const siteSelector = createSelector(
   state => state.site,
   site => site
@@ -52,9 +58,10 @@ const siteSelector = createSelector(
 
 const mapStateToProps = createSelector(
   carsSelector,
+  carsTypeSelector,
   siteSelector,
-  (cars, site) => ({
-    cars, site
+  (cars, cars_type, site) => ({
+    cars, cars_type, site
   })
 );
 

@@ -36,12 +36,7 @@ class Footer extends Component {
         return (
           <li key={car.id.toString()}>
             <a className="has-text-light" href={`/inventario/${car.model}`}>
-              {car.brand} - {car.model.toLowerCase()} 
-              {
-                car.price
-                ?<span className=""> {car.price}</span>
-                :<span className=""></span>
-              }
+              { car.brand } - { car.model } 
             </a>
           </li>)
       }
@@ -150,10 +145,10 @@ class Footer extends Component {
                       <p className="is-size-6">Teléfono: <span>229-0628</span></p>
                     </li>
                     <li>
-                      <p className="is-size-6">Telefax: <span>229-0639</span></p>
+                      <p className="is-size-6">celular: <span>6618-8330</span></p>
                     </li>
                     <li>
-                      <p className="is-size-6">Dirección: <span>Calle 69 este, San Francisco</span></p>
+                      <p className="is-size-6">Dirección: <span>Calle 68 este, San Francisco</span></p>
                     </li>
                   </ul>
                 </div>
