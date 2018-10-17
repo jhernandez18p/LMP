@@ -28,7 +28,7 @@ const composeEnhancers =  compose(
         thunk,
         // loggerMiddleware
     ),
-    window.devToolsExtension && window.devToolsExtension()
+    // window.devToolsExtension && window.devToolsExtension()
 );
 
 const store = createStore(
