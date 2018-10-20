@@ -12,15 +12,15 @@ import { connect } from 'react-redux';
 // Actions
 // User Actions
 import { createSelector } from 'reselect'
-import { 
-//   addUser,
-//   apiRequest,
-//   authUser,
-//   deleteUser,
-//   invalidateUser,
-//   requestUser,
-//   showError,
-//   updateUser,
+import {
+    //   addUser,
+    //   apiRequest,
+    //   authUser,
+    //   deleteUser,
+    //   invalidateUser,
+    //   requestUser,
+    //   showError,
+    //   updateUser,
 } from '../../../redux/actions/userActions';
 
 class InventoryDetail extends Component {
@@ -28,7 +28,7 @@ class InventoryDetail extends Component {
     render() {
         const cars = this.props.cars;
         const current_path = this.props.location.pathname.split('/');
-        const path = current_path[current_path.length-1];
+        const path = current_path[current_path.length - 1];
 
         const is_current = (car) => {
             const current_car = car.model.replace(/\s+/g, '-').toLowerCase() === path;
@@ -36,17 +36,19 @@ class InventoryDetail extends Component {
         }
         const car = cars.filter(is_current)[0];
 
-        const car_imgs = car.photos;        
-        
+        const car_imgs = car.photos;
+
         return (
             <div className="container">
                 <section className="section">
                     <div className="columns">
                         <div className="column">
-                            <div className="car-detail-carousel has-background-white-ter is-half">
-                                <NavCarousel imgs={ car_imgs }/>
+                            <div className="car-detail-carousel">
+                                <NavCarousel imgs={car_imgs} />
                             </div>
                         </div>
+                    </div>
+                    <div className="columns">
                         <div className="column">
                             <div className="car-detail-box has-background-white-ter has-text-white">
                                 <div>
@@ -62,13 +64,13 @@ class InventoryDetail extends Component {
                                 <div className="columns">
                                     <div className="column">
                                         <h3 className="is-size-5">Marca</h3>
-                                        <p className="has-text-grey-light">{ car.brand }</p>
+                                        <p className="has-text-grey-light">{car.brand}</p>
                                         <h3 className="is-size-5">Modelo</h3>
                                         <p className="has-text-grey-light">{car.model}</p>
                                         <h3 className="is-size-5">Recorrido</h3>
-                                        <p className="has-text-grey-light">{ car.milage }</p>
+                                        <p className="has-text-grey-light">{car.milage}</p>
                                         <h3 className="is-size-5">Dirección</h3>
-                                        <p className="has-text-grey-light">{ car.direction }</p>
+                                        <p className="has-text-grey-light">{car.direction}</p>
                                         <h3 className="is-size-5">Subtipo</h3>
                                         <p className="has-text-grey-light">{car.sub_type}</p>
                                         <h3 className="is-size-5">Tracción</h3>
@@ -107,9 +109,9 @@ const carsSelector = createSelector(
 
 const mapStateToProps = createSelector(
     carsSelector,
-    ( cars ) => ({
+    (cars) => ({
         cars
     })
 );
 
-export default withRouter(connect( mapStateToProps )(InventoryDetail));
+export default withRouter(connect(mapStateToProps)(InventoryDetail));

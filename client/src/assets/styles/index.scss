@@ -21,8 +21,9 @@ body {
   height: 100vh;
   background-color:#000;
   background-image:url('../images/background-app-01.jpg');
+  background-image:url('../images/background-app-02.jpg');
   background-image:url('../images/background-app-03.jpg');
-  background-image:url('../images/background-app-02.jpg') !important;
+  background-image:url('../images/background-app-04.jpg') !important;
   background-repeat:no-repeat;
   -webkit-background-size:cover;
   -moz-background-size:cover;
@@ -63,7 +64,7 @@ body {
 .background-red{background-color: $red}
 #is-search-btn{padding-left:15%;padding-right: 15%; margin: 15px 0 }
 #is-search-btn button{ width: 180px;}
-.car-detail-carousel{width: calc(100vw - 58vw); border-radius: 5px;}
+.car-detail-carousel{    width: calc(100vw - 23.175vw); border-radius: 5px;}
 .car-detail-box{
   // width: 500px; 
   border-radius: 5px; 
@@ -75,7 +76,7 @@ body {
 #price{
   margin-top: -35px
 }
-#cookieBottomBox{position: fixed;bottom: 0%; z-index: 99; min-width: 100vw}
+#cookieBottomBox{position: fixed;bottom: 0%; z-index: 99; min-width: 100vw; z-index: 99999;}
 
 .is-navbar-active-home{
   color: red !important;

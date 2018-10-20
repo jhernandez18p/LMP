@@ -1,41 +1,33 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
 
-
-import BaseBackground from '../../../assets/images/cars/carros-05.jpg';
+import CarPreview  from '../../Home/details/CarPreview'
 
 class InventoryFull extends Component {
 
     render() {
-        const cars = this.props.cars;
-        const size = 3;
-        const listItems = cars.slice(0,size).map(
-            (car) => {
-                return (
-                    <div className="column" key={car.id.toString()}>
-                        <Link to={car.model ?`/inventario/${car.model.replace(/\s+/g, '-').toLowerCase()}`:"/inventario/"}>
-                            <div className="img-container is-radius is-inventory">
-                                <figure className="image is-5by3">
-                                <img src={ car.photos[0].position === 0 ?`${car.photos[0].low}` : BaseBackground } alt={ car.brand }></img>
-                                </figure>
-                                <div className="img-text-overlay">
-                                    <div className="text">
-                                        <h3 className="is-size-4">{car.brand} {car.model}</h3>
-                                        <p className="">{car.description}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                )
-            }
-          );
+        function* chunkArray(original, n) {
+            const ary = [...original];
+            while (ary.length > 0)
+                yield ary.splice(ary, n);
+        }
+
+        let cars = this.props.cars;
         
         return (
             <div className="" id="is-searcher">
                 <section className="">
-                    <div className="columns">
-                        {listItems}
+                <div className="column is-padding-top-30" id="feeds">
+                        {Array.from(chunkArray(cars, 3)).map(
+                            ([one, two, three,], y) => {
+                                return (
+                                    <div className="columns" key={y.toString()}>
+                                        {one ? <CarPreview car={one}></CarPreview> : <div className="column"></div>}
+                                        {two ? <CarPreview car={two}></CarPreview> : <div className="column"></div>}
+                                        {three ? <CarPreview car={three}></CarPreview> : <div className="column"></div>}
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </section>
             </div>

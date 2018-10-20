@@ -1,39 +1,24 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import BaseBackground from '../../../assets/images/cars/carros-05.jpg';
+
+import CarPreview from './CarPreview';
 
 
 class Inventory extends Component {
     render() {
-        let cars = this.props.cars;
-        let cars_type = this.props.cars_type;
-        console.log(cars_type);
-        
-        let carType = <div></div>;
-        let size = 3;
 
-        let listItems = cars.slice(0,size).map(
-            (car) => {
-                return (
-                    <div className="column" key={car.id.toString()}>
-                        <Link to={car.model ?`/inventario/${car.model.replace(/\s+/g, '-').toLowerCase()}`:"/inventario/"}>
-                            <div className="img-container is-radius is-inventory">
-                                <figure className="image is-5by3">
-                                    <img src={ car.photos[0].position === 0 ?`${car.photos[0].low}` : BaseBackground } alt={ car.brand }></img>
-                                </figure>
-                                <div className="img-text-overlay">
-                                    <div className="text">
-                                        <h3 className="is-size-4">{car.brand} {car.model}</h3>
-                                        <p className="">{car.description}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                )
-            }
-        );
+        function* chunkArray(original, n) {
+            const ary = [...original];
+            while (ary.length > 0)
+                yield ary.splice(ary, n);
+        }
+
+        let cars = this.props.cars;
+        // eslint-disable-next-line
+        let cars_type = this.props.cars_type;
+
+        let carType = <div></div>;
 
         return (
             <div className="is-latest-inventory">
@@ -45,8 +30,18 @@ class Inventory extends Component {
                     </div>
                 </section>
                 <section className="section">
-                    <div className="columns">
-                        {listItems}
+                    <div className="column is-padding-top-30" id="feeds">
+                        {Array.from(chunkArray(cars.splice(0, 6), 3)).map(
+                            ([one, two, three,], y) => {
+                                return (
+                                    <div className="columns" key={y.toString()}>
+                                        {one ? <CarPreview car={one}></CarPreview> : <div className="column"></div>}
+                                        {two ? <CarPreview car={two}></CarPreview> : <div className="column"></div>}
+                                        {three ? <CarPreview car={three}></CarPreview> : <div className="column"></div>}
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </section>
                 <section className="section">

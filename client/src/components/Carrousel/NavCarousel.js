@@ -21,12 +21,12 @@ const settings = {
     arrows: false,
     adaptiveHeight: true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 6000,
     infinite: true,
     lazyLoad: true,
     centerPadding: '50px',
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow:5,
     slidesToScroll: 1
 };
 
@@ -42,8 +42,7 @@ class NavCarousel extends Component {
     componentDidMount() {
         const imgs = this.props.imgs;
         // console.log(imgs);
-        const size = 5;
-        const listItems = imgs.slice(0, size).map(
+        const listItems = imgs.map(
             (img) => {
                 return (
                     <div key={img.position.toString()}>

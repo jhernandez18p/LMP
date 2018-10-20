@@ -27,8 +27,9 @@ import InventoryFull from './details/Inventory';
  
 class Inventory extends Component {
   render() {
-    const brands = this.props.brands;
-    const cars = this.props.cars;
+    let brands = this.props.brands;
+    let cars = this.props.cars;
+
     return (
       <div className="container" id="inventory">
         <Helmet

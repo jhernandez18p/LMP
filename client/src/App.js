@@ -37,9 +37,7 @@ class App extends Component {
             { name: 'description', content: 'Luxury Motors Panamá, sitio web oficial para compra y venta de autos' },
             { name: 'keywords', content: 'Lujo, autos, carros en panama, compra venta, Panamá' },
           ]}
-          script={[
-            { 'src': 'https://use.fontawesome.com/releases/v5.0.4/js/all.js' },
-          ]}
+          script={[ { 'src': 'https://use.fontawesome.com/releases/v5.0.4/js/all.js' }, ]}
           link={
             [
               { 'rel': "apple-touch-icon", 'sizes': "114x114", 'href': appleicon114x114 },
